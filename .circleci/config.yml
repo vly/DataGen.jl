@@ -9,4 +9,4 @@ jobs:
       - checkout
       - run:
           name: Install and Test this package
-          command: julia -e 'using Pkg; Pkg.update();  Pkg.build("DataGen"); Pkg.test("DataGen");'
+          command: julia -e 'using Pkg; Pkg.update(); Pkg.add(PackageSpec(url="/root/project/DataGen.jl")); Pkg.build("DataGen"); Pkg.test("DataGen");'
