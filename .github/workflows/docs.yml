@@ -3,8 +3,8 @@ name: Deploy documentation
 on:
   push:
     branches:
-      - master
       - main
+      - master
 
 jobs:
   Documenter:
