@@ -85,6 +85,12 @@ function gen_ts(total_n::Number, season_n::Number;
             remainder = remainders + anomalies)
 end
 
+"""
+    gen_ts()
+
+Generates a basic timeseries with trend, seasonality, noise and some anomalies.
+Returns a dataframe with individual components as well as the composite `sample`.
+"""
 function gen_ts()
     gen_ts(365, 30)
 end
