@@ -8,14 +8,13 @@ on:
   pull_request:
 
 jobs:
-  docs-build:
+  Documenter:
+    name: Documentation
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install dependencies
-        run: julia --project=docs/ -e 'using Pkg; Pkg.develop(PackageSpec(path=pwd())); Pkg.instantiate(); Pkg.build(;verbose=true)'
-      - name: Build and deploy
+      - uses: julia-actions/julia-buildpkg@latest
+      - uses: julia-actions/julia-docdeploy@latest
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DOCUMENTER_KEY: ${{ secrets.DOCUMENTER_KEY }}
-        run: julia --project=docs/ docs/make.jl
