@@ -1,5 +1,7 @@
 # .circleci/config.yml
-version: 2
+version: 2.1
+orbs:
+  codecov: codecov/codecov@1.0.2
 jobs:
   build:
     working_directory: /root/project/DataGen.jl   # Clone into a directory whose name matches your Package.
@@ -9,4 +11,9 @@ jobs:
       - checkout
       - run:
           name: Install and Test this package
-          command: julia -e 'using Pkg; Pkg.update(); Pkg.clone(pwd()); Pkg.build("DataGen"); Pkg.test("DataGen");'
+          command: julia -e 'using Pkg; Pkg.update(); Pkg.add(PackageSpec(url="/root/project/DataGen.jl")); Pkg.build("DataGen"); Pkg.test("DataGen", coverage=true);'
+      - run:
+          name: Process code-coverage
+          command: julia -e 'using Pkg; cd(Pkg.dir("DataGen")); Pkg.add("Coverage"); using Coverage; coverage = process_folder(); LCOV.writefile("/root/project/DataGen.jl/coverage-lcov.info", coverage)'
+      - codecov/upload:
+          file: "/root/project/DataGen.jl/coverage-lcov.info"
