@@ -2,7 +2,8 @@ name: Deploy documentation
 
 on:
   push:
-    branches: [main]
+    branches: 
+      - main
 jobs:
   Documenter:
     name: Documentation
