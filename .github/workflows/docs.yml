@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - update-documentation
   pull_request:
 
 jobs:
