@@ -23,4 +23,4 @@ julia> sample_data = gen_ts()
 
 ## Acknowledgements
 
-Thanks to (@LeeDoYup)[github.com/leedoyup] for his work on Robust STL implementation along with the sample generation code that got me started. 
+Thanks to [@LeeDoYup](github.com/leedoyup) for his work on Robust STL implementation along with the sample generation code that got me started. 
