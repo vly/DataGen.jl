@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/vly/DataGen.jl.svg?style=shield)](https://circleci.com/gh/vly/DataGen.jl) [![codecov](https://codecov.io/gh/vly/DataGen.jl/branch/main/graph/badge.svg?token=4GRUCDJL9D)](https://codecov.io/gh/vly/DataGen.jl)
+[![](https://img.shields.io/badge/docs-stable-blue.svg)](https://vly.github.io/DataGen.jl/stable) [![CircleCI](https://circleci.com/gh/vly/DataGen.jl.svg?style=shield)](https://circleci.com/gh/vly/DataGen.jl) [![codecov](https://codecov.io/gh/vly/DataGen.jl/branch/main/graph/badge.svg?token=4GRUCDJL9D)](https://codecov.io/gh/vly/DataGen.jl)
 
 DataGen.jl
 ============
