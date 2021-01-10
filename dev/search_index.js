@@ -1,0 +1,3 @@
+var documenterSearchIndex = {"docs":
+[{"location":"#DataGen.jl-documentation","page":"DataGen.jl documentation","title":"DataGen.jl documentation","text":"","category":"section"},{"location":"","page":"DataGen.jl documentation","title":"DataGen.jl documentation","text":"gen_ts()","category":"page"},{"location":"#DataGen.gen_ts-Tuple{}","page":"DataGen.jl documentation","title":"DataGen.gen_ts","text":"gen_ts()\n\nGenerates a basic timeseries with trend, seasonality, noise and some anomalies.\n\nReturns a dataframe with individual components as well as the composite sample.\n\n\n\n\n\n","category":"method"}]
+}
