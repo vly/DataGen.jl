@@ -57,6 +57,34 @@ function genTrends(total_n, trend_change_num, trend_type, trend_level)
     trends
 end
 
+"""
+    gen_ts(total_n, season_n)
+
+Generates a basic timeseries with trend, seasonality, noise and some anomalies.
+
+**Parameters**:
+
+- _total_n_: size of required dataset (e.g. 365, 52, 12, etc.).
+- _season_n: number of seasonal points (e.g. 12 in case of a simulated monthly seasonality).
+
+The following are optional parameters that can be passed to customise the individual timeseries components:
+
+- _season_type_: set trajectory of seasonal component. `random` or `stair`. Default is `stair`.
+- _season_level_: set amplitude of the seasonal effect (essentially acts as a static multiplier). Default is `1`.
+
+- _trend_type_: set trajectory of trend component. `random` (default), `increase`, or `decrease`.
+- _trend_level_: set amplitude of the trend component. Default is `3`
+- _trend_change_num_: set how many instances of changes in the trend to be present. These are randomly distributed across the dataset. Default is `10`
+
+- _anomaly_num_: set how many anomalies are to be randomly distributed across the dataset. Default is `6`.
+- _anomaly_type_: set trajectory of the anomalies. `random` (default), `increase`, or `decrease`.
+- _anomaly_level_: set amplitude of the anomalies. Default is `4`.
+
+- _noise_mean_: mean of the normaly distributed noise component. Default is `0`.
+- _noise_std_: standard deviation of the noise component. Default is `0.316`.
+
+Returns a dataframe with individual components as well as the composite `sample`.
+"""
 function gen_ts(total_n::Number, season_n::Number;
     season_type = "stair",
     season_level = 1,
