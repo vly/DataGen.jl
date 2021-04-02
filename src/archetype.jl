@@ -2,9 +2,13 @@
 
 # interaction events
 # generate website traffic dataset. Format is either GA, Heap, or Amplitude formats
-function gen_traffic() end
+function gen_traffic(days::String, shape::String) end
 function gen_traffic_visitors() end
-function gen_traffic_sessions() end
+function gen_traffic_sessions(days::String, shape::String;
+    flavour::String = "GA",
+    channels::AbstractArray = ["direct", "paid", "email", "referral", "affiliate", "organic"],
+    n_anomalies::Integer = 5,
+    seasonality::String = "fiveeyes") end
 function gen_traffic_events() end
 
 # transactional data
